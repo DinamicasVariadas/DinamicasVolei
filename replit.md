@@ -54,7 +54,7 @@ Preferred communication style: Simple, everyday language.
 # Recent Changes
 
 ## September 28, 2025 - Author Section & Mobile Optimization
-- **Author Image**: Replaced icon with actual professor photo (Prof. Lucas Andrade)
+- **Author Image**: Replaced icon with actual professor photo (Profª Ana Carvalho)
 - **Image Styling**: Made author image perfectly round with border and shadow effects  
 - **Layout Optimization**: Reduced spacing and made elements more compact
 - **Mobile-First Design**: Improved mobile responsiveness with proper image stacking
