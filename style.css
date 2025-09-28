@@ -605,8 +605,8 @@ section {
 }
 
 .author-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
+    display: flex;
+    flex-direction: row;
     gap: 60px;
     align-items: center;
     padding: 40px;
@@ -616,6 +616,17 @@ section {
     box-shadow: 0 10px 40px rgba(0,0,0,0.1);
     background: white;
     border: 2px solid var(--primary-blue);
+}
+
+.author-info {
+    flex: 2;
+    order: 1;
+}
+
+.author-image {
+    flex: 1;
+    text-align: center;
+    order: 2;
 }
 
 .author-info h2 {
@@ -682,9 +693,6 @@ section {
     letter-spacing: 0.5px;
 }
 
-.author-image {
-    text-align: center;
-}
 
 .author-image i {
     font-size: 10rem;
@@ -975,21 +983,68 @@ section {
     }
     
     .author-content {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 30px;
+        padding: 30px 20px;
         text-align: center;
-        gap: 40px;
+    }
+    
+    .author-info {
+        order: 1;
+        flex: none;
+    }
+    
+    .author-image {
+        order: 2;
+        flex: none;
+    }
+    
+    .author-info h2 {
+        font-size: 2.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .author-info h3 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    .author-title {
+        font-size: 1.1rem;
+        margin-bottom: 25px;
     }
     
     .author-stats {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 12px;
+        gap: 10px;
+        margin: 20px 0;
     }
     
     .stat {
-        min-width: 80px;
-        max-width: 120px;
-        padding: 10px 8px;
+        min-width: 70px;
+        max-width: 100px;
+        padding: 8px 6px;
+    }
+    
+    .stat strong {
+        font-size: 1.8rem;
+    }
+    
+    .stat span {
+        font-size: 0.8rem;
+    }
+    
+    .author-info p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-top: 15px;
+    }
+    
+    .author-image i {
+        font-size: 7rem;
+        padding: 15px;
+        border-width: 2px;
     }
     
     .hero-badges {
@@ -1060,7 +1115,79 @@ section {
     }
     
     .author-image i {
-        font-size: 6rem;
+        font-size: 5rem;
+        padding: 12px;
+        border-width: 2px;
+    }
+    
+    .hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    
+    .hero-badges {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .badge {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+    
+    .bonus-card h3 {
+        font-size: 1.1rem;
+    }
+    
+    .bonus-card p {
+        font-size: 0.9rem;
+    }
+    
+    .bonus-image img {
+        width: 150px;
+        height: 110px;
+    }
+    
+    .plan-card h3 {
+        font-size: 1.3rem;
+    }
+    
+    .new-price {
+        font-size: 2.5rem;
+    }
+    
+    .old-price {
+        font-size: 1rem;
+    }
+    
+    .author-info h2 {
+        font-size: 1.9rem;
+    }
+    
+    .author-info h3 {
+        font-size: 1.5rem;
+    }
+    
+    .author-title {
+        font-size: 1rem;
+    }
+    
+    .stat {
+        min-width: 60px;
+        max-width: 90px;
+    }
+    
+    .stat strong {
+        font-size: 1.5rem;
+    }
+    
+    .stat span {
+        font-size: 0.75rem;
     }
 }
 
