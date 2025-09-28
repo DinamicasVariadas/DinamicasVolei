@@ -539,8 +539,9 @@ section {
 
 /* Sobre o Autor */
 .about-author {
-    background: var(--dark-gray);
-    color: white;
+    background: white;
+    color: var(--dark-gray);
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
 }
 
 .author-content {
@@ -548,45 +549,74 @@ section {
     grid-template-columns: 2fr 1fr;
     gap: 60px;
     align-items: center;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+    background: white;
+    border: 2px solid var(--primary-blue);
 }
 
 .author-info h2 {
-    font-size: 2.5rem;
+    font-size: 2.8rem;
     margin-bottom: 10px;
-    color: var(--primary-blue);
+    color: var(--dark-gray);
+    font-weight: 700;
 }
 
 .author-info h3 {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 10px;
+    color: var(--primary-blue);
+    font-weight: 600;
 }
 
 .author-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     color: var(--primary-green);
     margin-bottom: 30px;
+    font-weight: 500;
 }
 
 .author-stats {
     display: flex;
-    gap: 30px;
+    gap: 40px;
     margin: 30px 0;
     flex-wrap: wrap;
 }
 
 .stat {
     text-align: center;
+    padding: 20px;
+    background: var(--light-gray);
+    border-radius: 15px;
+    min-width: 120px;
+    transition: transform 0.3s ease;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 .stat strong {
     display: block;
-    font-size: 2rem;
+    font-size: 2.2rem;
     color: var(--primary-green);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--primary-green), var(--dark-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .stat span {
-    font-size: 0.9rem;
-    opacity: 0.8;
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .author-image {
@@ -594,8 +624,28 @@ section {
 }
 
 .author-image i {
-    font-size: 8rem;
+    font-size: 10rem;
     color: var(--primary-blue);
+    background: linear-gradient(135deg, var(--primary-blue), var(--dark-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    padding: 20px;
+    border: 3px solid var(--primary-blue);
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+}
+
+.author-image i:hover {
+    transform: scale(1.1);
+}
+
+.author-info p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 20px;
 }
 
 /* FAQ */
