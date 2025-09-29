@@ -261,34 +261,75 @@ section {
 }
 
 .benefit-card {
-    background: white;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
     padding: 40px 30px;
-    border-radius: 15px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(0,123,255,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-blue), #00b4d8);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.benefit-card:hover::before {
+    transform: scaleX(1);
 }
 
 .benefit-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,123,255,0.2);
+    border-color: rgba(0,123,255,0.3);
 }
 
 .benefit-icon {
     font-size: 3rem;
-    color: var(--primary-blue);
+    color: white;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-blue), #0056b3);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(0,123,255,0.3);
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.1) rotate(5deg);
+    box-shadow: 0 8px 30px rgba(0,123,255,0.5);
 }
 
 .benefit-card h3 {
-    font-size: 1.3rem;
-    font-weight: 600;
+    font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 15px;
     color: var(--dark-gray);
+    transition: color 0.3s ease;
+}
+
+.benefit-card:hover h3 {
+    color: var(--primary-blue);
 }
 
 .benefit-card p {
     color: #666;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 /* Benefícios Exclusivos */
@@ -300,31 +341,74 @@ section {
 
 .exclusive-card {
     text-align: center;
-    padding: 30px 20px;
-    border-radius: 15px;
-    transition: transform 0.3s ease;
+    padding: 40px 30px;
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    background: linear-gradient(135deg, #ffffff 0%, #f0fdf4 100%);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    border: 1px solid rgba(40,167,69,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.exclusive-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-green), #10b981);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.exclusive-card:hover::before {
+    transform: scaleX(1);
 }
 
 .exclusive-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(40,167,69,0.2);
+    border-color: rgba(40,167,69,0.3);
 }
 
 .exclusive-icon {
-    font-size: 3.5rem;
-    color: var(--primary-green);
+    font-size: 3rem;
+    color: white;
     margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--primary-green), #1e7e34);
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 5px 20px rgba(40,167,69,0.3);
+    transition: all 0.3s ease;
+}
+
+.exclusive-card:hover .exclusive-icon {
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 8px 30px rgba(40,167,69,0.5);
 }
 
 .exclusive-card h3 {
-    font-size: 1.2rem;
-    font-weight: 600;
+    font-size: 1.3rem;
+    font-weight: 700;
     margin-bottom: 15px;
     color: var(--dark-gray);
+    transition: color 0.3s ease;
+}
+
+.exclusive-card:hover h3 {
+    color: var(--primary-green);
 }
 
 .exclusive-card p {
     color: #666;
-    line-height: 1.6;
+    line-height: 1.8;
+    font-size: 0.95rem;
 }
 
 /* Bônus Section */
