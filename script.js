@@ -428,14 +428,9 @@ function trackEvents() {
 // Sistema de Notificações
 const notificationMessages = [
     { icon: 'fa-shopping-cart', title: 'Nova compra!', message: 'Maria de São Paulo acabou de comprar o Plano Premium' },
-    { icon: 'fa-users', title: 'Atenção!', message: '12 pessoas estão vendo esta página agora' },
     { icon: 'fa-check-circle', title: 'Compra confirmada!', message: 'João do Rio de Janeiro garantiu o Plano Premium' },
-    { icon: 'fa-fire', title: 'Oferta quente!', message: '5 vagas restantes com desconto especial' },
     { icon: 'fa-shopping-cart', title: 'Nova compra!', message: 'Ana de Minas Gerais acabou de comprar' },
-    { icon: 'fa-star', title: 'Avaliação!', message: 'Produto avaliado com 5 estrelas por Carla' },
-    { icon: 'fa-users', title: 'Atenção!', message: '8 pessoas estão vendo esta oferta agora' },
     { icon: 'fa-check-circle', title: 'Compra confirmada!', message: 'Pedro de Brasília garantiu o Plano Premium' },
-    { icon: 'fa-clock', title: 'Tempo limitado!', message: 'Oferta expira em breve, garanta a sua' },
     { icon: 'fa-shopping-cart', title: 'Nova compra!', message: 'Fernanda de Salvador acabou de comprar' }
 ];
 
