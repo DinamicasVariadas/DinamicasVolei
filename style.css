@@ -1570,7 +1570,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 280px;
+    max-width: 240px;
     pointer-events: none;
 }
 
