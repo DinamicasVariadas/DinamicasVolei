@@ -161,9 +161,13 @@ function addPlanButtonEffects() {
                 ripple.remove();
             }, 600);
             
-            // Simula ação de compra (aqui você adicionaria integração real)
+            // Redireciona para o checkout correto baseado no plano
             setTimeout(() => {
-                alert('Redirecionando para o pagamento...\n\nEm uma implementação real, aqui seria integrado com um gateway de pagamento como Stripe, PagSeguro, ou Mercado Pago.');
+                if (this.classList.contains('basic-button')) {
+                    window.location.href = 'https://checkout.dinamicasdivertida.site/VCCL1O8SCBJ0';
+                } else if (this.classList.contains('premium-button')) {
+                    window.location.href = 'https://checkout.dinamicasdivertida.site/VCCL1O8SCBJI';
+                }
             }, 300);
         });
     });
