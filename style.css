@@ -67,7 +67,7 @@ body {
 
 /* Topo com Aviso de Urgência */
 .urgency-banner {
-    background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+    background: #e74c3c;
     color: white;
     text-align: center;
     padding: 15px 0;
