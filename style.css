@@ -1621,7 +1621,7 @@ html {
     display: flex;
     flex-direction: column;
     gap: 15px;
-    max-width: 240px;
+    max-width: 200px;
     pointer-events: none;
 }
 
