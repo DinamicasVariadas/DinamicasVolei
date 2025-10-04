@@ -448,6 +448,7 @@ function createNotification(notification) {
     notificationEl.className = 'notification';
     
     notificationEl.innerHTML = `
+        <div class="notification-icon">🛒</div>
         <div class="notification-content">
             <div class="notification-name">${notification.name}</div>
             <div class="notification-product">Comprou: ${notification.product}</div>
