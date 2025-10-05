@@ -1,6 +1,6 @@
 # Overview
 
-This project is a modern, high-conversion sales landing page for "+500 Dinâmicas de Português" (500+ Portuguese Activities). The landing page is designed to sell educational Portuguese language materials to teachers and educators in Brazil. It features a complete sales funnel with urgency banners, product benefits, pricing plans, testimonials, and author credentials. The page is built using vanilla web technologies without any frameworks, focusing on conversion optimization and responsive design.
+This project is a modern, high-conversion sales landing page for "+500 Dinâmicas Interativas de Inglês" (500+ Interactive English Activities). The landing page is designed to sell educational English language materials to teachers and educators in Brazil. It features a complete sales funnel with urgency banners, product benefits, pricing plans, testimonials, and author credentials. The page is built using vanilla web technologies without any frameworks, focusing on conversion optimization and responsive design.
 
 # User Preferences
 
@@ -54,14 +54,14 @@ Preferred communication style: Simple, everyday language.
 # Recent Changes
 
 ## October 3, 2025 - Adaptation to Portuguese Language Materials
-- **Content Migration**: Adapted entire landing page from Math to Portuguese language materials
-- **Title & Hero**: Changed main title to "+500 Dinâmicas de Português" with updated subtitle
-- **Benefits Section**: Updated all references from Math to Portuguese language teaching (BNCC de Língua Portuguesa)
-- **Bonus Materials**: Adapted bonuses to Portuguese-focused content (Certificado de Português, Jogos Interativos de Português, Quiz de Português)
-- **Pricing Plans**: Updated plan features to reflect Portuguese dynamics instead of Math
-- **Testimonials**: Modified all testimonials to Portuguese teaching context
-- **Author Section**: Changed author specialty from Math to Portuguese language educator
-- **FAQ Section**: Updated answers to reflect BNCC de Língua Portuguesa compliance
+- **Latest Update (October 2025)**: Adapted entire landing page from Portuguese to English language materials
+- **Title & Hero**: Changed main title to "+500 Dinâmicas Interativas de Inglês" with updated subtitle focused on interactive English teaching
+- **Benefits Section**: Updated all references from Portuguese to English language teaching, removed BNCC references, added focus on communicative methodology
+- **Bonus Materials**: Adapted bonuses to English-focused content (Certificado de Inglês, Jogos Interativos de Inglês, Quiz de Inglês)
+- **Pricing Plans**: Updated plan features to reflect interactive English dynamics
+- **Testimonials**: Modified all testimonials to English teaching context, emphasizing fluency and communication
+- **Author Section**: Changed author specialty from Portuguese to English language educator, updated certification to "Inglês Comunicativo"
+- **FAQ Section**: Updated answers to reflect communicative methodology and interactive approach
 
 ## September 28, 2025 - Author Section & Mobile Optimization
 - **Author Image**: Replaced icon with actual professor photo (Profª Ana Carvalho)
