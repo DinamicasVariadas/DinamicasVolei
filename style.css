@@ -166,6 +166,12 @@ body {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.2);
     cursor: pointer;
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 100%);
+    min-height: 200px;
+}
+
+.video-wrapper.video-ready {
+    background: transparent;
 }
 
 .video-wrapper video {
@@ -173,6 +179,7 @@ body {
     height: auto;
     border-radius: 15px;
     display: block;
+    background: #1a1a1a;
 }
 
 .play-button {

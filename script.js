@@ -539,7 +539,61 @@ function setupVideoPlayer() {
     
     if (!video || !playButton || !videoContainer) return;
     
+    // Cria poster a partir do primeiro frame do vídeo
+    function createPosterFromVideo() {
+        const canvas = document.createElement('canvas');
+        canvas.width = video.videoWidth || 640;
+        canvas.height = video.videoHeight || 360;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+        
+        try {
+            const posterUrl = canvas.toDataURL('image/jpeg', 0.8);
+            video.poster = posterUrl;
+            videoContainer.classList.add('video-ready');
+        } catch(e) {
+            console.log('Não foi possível criar poster:', e);
+        }
+    }
+    
+    // Pré-carrega o vídeo completamente e mostra o primeiro frame
+    function preloadVideo() {
+        // Força o carregamento completo
+        video.preload = 'auto';
+        
+        // Quando houver metadados, define para o primeiro frame
+        video.addEventListener('loadedmetadata', function() {
+            video.currentTime = 0.5;
+        }, { once: true });
+        
+        // Quando o frame for buscado, cria o poster
+        video.addEventListener('seeked', function() {
+            createPosterFromVideo();
+        }, { once: true });
+        
+        // Quando puder reproduzir, garante que está pronto
+        video.addEventListener('canplay', function() {
+            if (!video.poster) {
+                createPosterFromVideo();
+            }
+            videoContainer.classList.add('video-ready');
+        }, { once: true });
+        
+        // Garante que o vídeo está pronto para reprodução instantânea
+        video.addEventListener('canplaythrough', function() {
+            console.log('Vídeo pronto para reprodução instantânea');
+        }, { once: true });
+        
+        // Força o carregamento do vídeo
+        video.load();
+    }
+    
+    // Inicia o pré-carregamento imediatamente
+    preloadVideo();
+    
     function playVideo() {
+        // Começa do início quando clicar
+        video.currentTime = 0;
         video.muted = false;
         video.play().then(function() {
             playButton.classList.add('hidden');
