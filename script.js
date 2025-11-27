@@ -534,26 +534,20 @@ document.addEventListener('DOMContentLoaded', function() {
 // Controle do vídeo - Card escuro com play overlay
 function setupVideoPlayer() {
     const video = document.getElementById('hero-video');
-    const poster = document.getElementById('video-poster');
     const playOverlay = document.getElementById('play-overlay');
-    const videoContainer = document.getElementById('video-container');
     const caption = document.querySelector('.video-caption');
     
     if (!video || !playOverlay) return;
     
-    // Pré-carrega o vídeo em segundo plano
+    // Pré-carrega o vídeo
     video.preload = 'auto';
     video.load();
     
     function playVideo() {
-        // Mostra o vídeo e esconde o poster
-        if (poster) poster.style.display = 'none';
-        video.style.display = 'block';
         playOverlay.classList.add('hidden');
         if (caption) caption.textContent = 'Clique para pausar';
         
         video.play().catch(function() {
-            // Se falhar, tenta com mudo
             video.muted = true;
             video.play();
         });
@@ -566,8 +560,6 @@ function setupVideoPlayer() {
     }
     
     function resetVideo() {
-        video.style.display = 'none';
-        if (poster) poster.style.display = 'block';
         playOverlay.classList.remove('hidden');
         if (caption) caption.textContent = 'Clique para assistir';
         video.currentTime = 0;
@@ -579,7 +571,7 @@ function setupVideoPlayer() {
         playVideo();
     });
     
-    // Clique no vídeo para pausar
+    // Clique no vídeo para pausar/continuar
     video.addEventListener('click', function() {
         if (video.paused) {
             playVideo();

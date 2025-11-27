@@ -187,6 +187,7 @@ body {
     height: auto;
     border-radius: 12px;
     display: block;
+    background: #000;
 }
 
 .play-overlay {
