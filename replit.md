@@ -59,6 +59,12 @@ Preferred communication style: Simple, everyday language.
 
 # Recent Changes
 
+- **December 2025**: Matched design with dinamicasincriveis.shop reference site
+  - Changed urgency banner (top ribbon) from purple/pink gradient to green gradient (#10B981 to #34D399 to #6EE7B7)
+  - Added dynamic current date display in urgency banner (e.g., "DESCONTO SÓ HOJE 01/12/2025")
+  - Added no-cache headers to server for proper browser refresh
+  - Buttons remain green as per reference site
+
 - **November 2025**: Adapted page from English teaching dynamics to 70 Yoga Dynamics
   - Updated all content, titles, and descriptions for yoga theme
   - Changed color scheme to calming yoga colors (purple, lavender, sage green)

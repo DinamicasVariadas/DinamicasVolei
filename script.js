@@ -346,6 +346,18 @@ function saveUserPreferences() {
     });
 }
 
+// Função para definir a data atual no banner
+function setCurrentDate() {
+    const dateElement = document.getElementById('current-date');
+    if (dateElement) {
+        const now = new Date();
+        const day = now.getDate().toString().padStart(2, '0');
+        const month = (now.getMonth() + 1).toString().padStart(2, '0');
+        const year = now.getFullYear();
+        dateElement.textContent = `${day}/${month}/${year}`;
+    }
+}
+
 // Função principal que inicializa tudo
 function initializeApp() {
     // Espera o DOM carregar completamente
@@ -353,6 +365,9 @@ function initializeApp() {
         document.addEventListener('DOMContentLoaded', initializeApp);
         return;
     }
+    
+    // Define a data atual no banner
+    setCurrentDate();
     
     // Inicializa todas as funcionalidades
     startCountdown();
