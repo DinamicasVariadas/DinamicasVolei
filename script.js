@@ -463,11 +463,11 @@ function createNotification(notification) {
     notificationEl.className = 'notification';
     
     notificationEl.innerHTML = `
-        <div class="notification-icon">✓</div>
+        <div class="notification-icon" style="background: var(--primary-green); color: white; width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0;">✓</div>
         <div class="notification-content">
-            <div class="notification-name">${notification.name}</div>
-            <div class="notification-product">Comprou: ${notification.product}</div>
-            <div class="notification-location">${notification.location} - ${notification.time}</div>
+            <strong>${notification.name}</strong>
+            <p>Comprou: ${notification.product}</p>
+            <p style="color: #999; font-size: 0.75rem;">${notification.location} - ${notification.time}</p>
         </div>
     `;
 
