@@ -18,20 +18,19 @@ body {
     padding: 0 20px;
 }
 
-/* Cores Principais - Tema Yoga */
+/* Cores Principais - Tema Vôlei */
 :root {
-    --primary-blue: #8B5CF6;
-    --primary-green: #10B981;
-    --dark-blue: #7C3AED;
-    --dark-green: #059669;
+    --primary-blue: #1E3A8A;
+    --primary-orange: #F97316;
+    --primary-yellow: #FBBF24;
+    --dark-blue: #1E40AF;
+    --dark-orange: #EA580C;
     --light-gray: #f8fafc;
     --dark-gray: #1e293b;
     --border-color: #e2e8f0;
-    --yoga-purple: #A855F7;
-    --yoga-sage: #34D399;
-    --yoga-lavender: #C084FC;
-    --yoga-coral: #FB7185;
-    --yoga-gold: #FBBF24;
+    --volley-blue: #2563EB;
+    --volley-orange: #FB923C;
+    --volley-yellow: #FCD34D;
 }
 
 /* Animações */
@@ -130,9 +129,9 @@ body {
 }
 
 .number-500 {
-    color: #A855F7;
+    color: var(--primary-orange);
     font-weight: 800;
-    text-shadow: 0 2px 10px rgba(168, 85, 247, 0.3);
+    text-shadow: 0 2px 10px rgba(249, 115, 22, 0.3);
 }
 
 .bonus-text {
@@ -376,7 +375,7 @@ section {
     font-size: 2.2rem;
     color: white;
     margin: 0 auto 25px;
-    background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #C084FC 100%);
+    background: linear-gradient(135deg, var(--primary-blue) 0%, var(--volley-blue) 100%);
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -384,7 +383,7 @@ section {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 6px 20px rgba(30, 58, 138, 0.4);
     line-height: 1;
     position: relative;
 }
@@ -455,7 +454,7 @@ section {
     font-size: 2.2rem;
     color: white;
     margin: 0 auto 25px;
-    background: linear-gradient(135deg, #10B981 0%, #34D399 50%, #6EE7B7 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--volley-orange) 100%);
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -463,7 +462,7 @@ section {
     align-items: center;
     justify-content: center;
     transition: all 0.3s ease;
-    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+    box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
     line-height: 1;
     position: relative;
 }
@@ -513,13 +512,13 @@ section {
 }
 
 .bonus-card {
-    background: linear-gradient(180deg, #ecfdf5 0%, #ffffff 100%);
+    background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
     padding: 40px 30px;
     border-radius: 20px;
     text-align: center;
     position: relative;
-    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.15);
-    border: 2px solid #34D399;
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.15);
+    border: 2px solid var(--volley-orange);
     transition: all 0.3s ease;
     overflow: visible;
 }
@@ -703,9 +702,9 @@ section {
 }
 
 .plan-card.popular {
-    border: 3px solid #A855F7;
+    border: 3px solid var(--primary-orange);
     transform: none;
-    background: linear-gradient(180deg, #faf5ff 0%, #ffffff 100%);
+    background: linear-gradient(180deg, #fff7ed 0%, #ffffff 100%);
 }
 
 .popular-badge {
@@ -713,14 +712,14 @@ section {
     top: -15px;
     left: 50%;
     transform: translateX(-50%);
-    background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 50%, #C084FC 100%);
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--dark-orange) 100%);
     color: white;
     padding: 8px 20px;
     border-radius: 25px;
     font-weight: 600;
     font-size: 0.9rem;
     text-transform: uppercase;
-    box-shadow: 0 4px 15px rgba(168, 85, 247, 0.4);
+    box-shadow: 0 4px 15px rgba(249, 115, 22, 0.4);
 }
 
 .plan-card h3 {
@@ -754,7 +753,7 @@ section {
 .new-price {
     font-size: 3rem;
     font-weight: 700;
-    color: var(--primary-green);
+    color: var(--primary-orange);
     display: block;
 }
 
@@ -848,11 +847,11 @@ section {
 
 /* Bonus Items */
 .bonus-item {
-    color: #A855F7 !important;
+    color: var(--primary-orange) !important;
 }
 
 .bonus-item i {
-    color: #A855F7 !important;
+    color: var(--primary-orange) !important;
 }
 
 /* No Benefit Item */
@@ -962,9 +961,9 @@ section {
     max-width: 850px;
     margin: 0 auto;
     border-radius: 15px;
-    box-shadow: 0 8px 35px rgba(139, 92, 246, 0.15);
-    background: linear-gradient(180deg, #faf5ff 0%, #ffffff 100%);
-    border: 2px solid #A855F7;
+    box-shadow: 0 8px 35px rgba(30, 58, 138, 0.15);
+    background: linear-gradient(180deg, #eff6ff 0%, #ffffff 100%);
+    border: 2px solid var(--primary-blue);
 }
 
 .author-info {
