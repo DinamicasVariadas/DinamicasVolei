@@ -1207,102 +1207,187 @@ section {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.85);
     display: none;
     align-items: center;
     justify-content: center;
-    z-index: 2000;
-    backdrop-filter: blur(5px);
+    z-index: 9999;
+    backdrop-filter: blur(8px);
+    padding: 15px;
+}
+
+.popup-overlay.active {
+    display: flex;
 }
 
 .popup-card {
     background: white;
-    padding: 40px;
-    border-radius: 20px;
-    max-width: 450px;
-    width: 90%;
+    padding: 30px 20px;
+    border-radius: 24px;
+    max-width: 420px;
+    width: 100%;
     text-align: center;
     position: relative;
-    animation: zoomIn 0.3s ease forwards;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    animation: popupAppear 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.8);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
+@keyframes popupAppear {
+    from { opacity: 0; transform: scale(0.8) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.popup-tag {
+    background: #FEF2F2;
+    color: #DC2626;
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 800;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
 }
 
 .popup-title {
-    font-size: 1.8rem;
-    color: var(--dark-gray);
-    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #111827;
+    margin-bottom: 12px;
+    line-height: 1.2;
+    font-weight: 800;
+}
+
+.popup-subtitle {
+    font-size: 0.9rem;
+    color: #4B5563;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.popup-offer-box {
+    background: #F9FAFB;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border: 2px dashed #D1D5DB;
 }
 
 .popup-price {
-    margin: 25px 0;
+    margin-bottom: 15px;
 }
 
 .popup-old-price {
     text-decoration: line-through;
-    color: #999;
+    color: #9CA3AF;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 2px;
+}
+
+.popup-new-price-container {
+    color: var(--primary-green);
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+
+.price-symbol {
     font-size: 1.2rem;
+    font-weight: 700;
+    margin-right: 2px;
 }
 
 .popup-new-price {
-    display: block;
-    font-size: 3rem;
-    color: var(--primary-green);
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.price-cents {
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
 .popup-benefits {
     text-align: left;
     list-style: none;
-    margin-bottom: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 .popup-benefits li {
-    padding: 8px 0;
-    font-size: 0.95rem;
+    padding: 6px 0;
+    font-size: 0.85rem;
+    color: #374151;
     display: flex;
     align-items: center;
     gap: 10px;
 }
 
-.popup-benefits li::before {
-    content: '✓';
+.popup-benefits li i {
     color: var(--primary-green);
-    font-weight: bold;
+    font-size: 1rem;
 }
 
 .popup-buttons {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 12px;
 }
 
 .popup-btn {
-    padding: 15px;
+    padding: 16px;
     border-radius: 50px;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    display: block;
 }
 
 .popup-btn-accept {
-    background: var(--primary-green);
+    background: linear-gradient(135deg, var(--primary-green) 0%, #86d154 100%);
     color: white;
+    box-shadow: 0 10px 15px -3px rgba(116, 192, 68, 0.3);
+    text-transform: uppercase;
+}
+
+.popup-btn-accept:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.1);
 }
 
 .popup-btn-decline {
-    color: #999;
-    font-size: 0.9rem;
+    background: transparent;
+    color: #9CA3AF;
+    font-size: 0.75rem;
+    font-weight: 500;
+    padding: 5px;
+    text-decoration: underline;
+}
+
+.popup-footer-note {
+    font-size: 0.7rem;
+    color: #9CA3AF;
+    margin-top: 15px;
+}
+
+/* Responsividade Mobile */
+@media (max-width: 480px) {
+    .popup-card {
+        padding: 25px 15px;
+    }
+    .popup-title {
+        font-size: 1.3rem;
+    }
+    .popup-new-price {
+        font-size: 3rem;
+    }
+    .popup-btn-accept {
+        font-size: 0.9rem;
+        padding: 14px;
+    }
 }
 
 /* Responsividade */

@@ -388,29 +388,38 @@
     <!-- Pop-up de Upgrade Premium -->
     <div id="upgrade-popup" class="popup-overlay">
         <div class="popup-card">
-            <h3 class="popup-title">Atenção Treinador!</h3>
-            <p class="popup-subtitle">Leve o <strong>Combo Quadra + Areia + Bônus</strong> por um preço especial!</p>
+            <div class="popup-tag">OFERTA ÚNICA E EXCLUSIVA</div>
+            <h3 class="popup-title">ESPERE! NÃO LEVE APENAS O BÁSICO...</h3>
+            <p class="popup-subtitle">Percebemos que você quer evoluir seus treinos. Por que levar apenas o básico se você pode ter o <strong> Arsenal Completo</strong> por quase o mesmo preço?</p>
             
-            <div class="popup-price">
-                <span class="popup-old-price">De R$27</span>
-                <span class="popup-new-price">R$17</span>
+            <div class="popup-offer-box">
+                <div class="popup-price">
+                    <span class="popup-old-price">De R$27,00</span>
+                    <div class="popup-new-price-container">
+                        <span class="price-symbol">R$</span>
+                        <span class="popup-new-price">17</span>
+                        <span class="price-cents">,00</span>
+                    </div>
+                </div>
+                
+                <ul class="popup-benefits">
+                    <li><i class="fas fa-check-circle"></i> <strong>+70 Dinâmicas</strong> (Quadra)</li>
+                    <li><i class="fas fa-check-circle"></i> <strong>40 Dinâmicas</strong> (Areia 2x2)</li>
+                    <li><i class="fas fa-gift"></i> <strong>BÔNUS:</strong> Planos Semanais Prontos</li>
+                    <li><i class="fas fa-gift"></i> <strong>BÔNUS:</strong> Guia de Correções Rápidas</li>
+                    <li><i class="fas fa-gift"></i> <strong>BÔNUS:</strong> Combinações Estratégicas</li>
+                </ul>
             </div>
-            
-            <ul class="popup-benefits">
-                <li>+70 Dinâmicas de Quadra</li>
-                <li>40 Dinâmicas de Areia</li>
-                <li>Planos de Treinos Prontos</li>
-                <li>Guia de Correções Técnicas</li>
-            </ul>
             
             <div class="popup-buttons">
                 <a href="#" class="popup-btn popup-btn-accept" id="accept-upgrade">
-                    QUERO O PREMIUM POR R$17
+                    SIM! QUERO O COMBO COMPLETO POR R$17
                 </a>
-                <a href="#" class="popup-btn popup-btn-decline" id="decline-upgrade">
-                    Continuar com o Básico
+                <a href="#" class="popup-btn popup-btn-decline" id="decline-upgrade" onclick="hideUpgradePopup()">
+                    Não, prefiro ficar apenas com o básico
                 </a>
             </div>
+            <p class="popup-footer-note">Acesso imediato após o pagamento. Garantia de 7 dias.</p>
         </div>
     </div>
 
