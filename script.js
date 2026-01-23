@@ -165,9 +165,10 @@ function addPlanButtonEffects() {
             
             // Se for botão básico, mostra o pop-up de upgrade
             if (this.classList.contains('basic-button')) {
-                setTimeout(() => {
-                    showUpgradePopup();
-                }, 400);
+                showUpgradePopup();
+            } else {
+                // Para o botão premium normal, redireciona
+                window.location.href = this.getAttribute('href');
             }
         });
     });
