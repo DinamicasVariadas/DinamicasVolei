@@ -137,9 +137,10 @@ function addPlanButtonEffects() {
         button.addEventListener('click', function(e) {
             // Se for botão básico, mostra o pop-up de upgrade e evita o redirecionamento
             if (this.classList.contains('basic-button')) {
-                e.preventDefault();
-                showUpgradePopup();
-                return;
+                // Removemos o preventDefault para permitir a navegação se o usuário clicar no botão
+                // e o sistema de pop-up estiver controlado pelo onclick no HTML
+                // ou simplesmente deixamos o link seguir seu curso se o usuário já clicou.
+                // Para corrigir o redirecionamento automático reportado, vamos garantir que nada force o clique.
             }
             
             // Para outros botões (premium), o link natural do <a> funciona normalmente
