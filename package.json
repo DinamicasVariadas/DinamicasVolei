@@ -1,0 +1,12 @@
+{
+  "name": "dinamicas-volei",
+  "version": "1.0.0",
+  "description": "Página de vendas de dinâmicas de vôlei",
+  "main": "index.html",
+  "scripts": {
+    "build": "mkdir -p dist && cp index.html style.css script.js video.mp4 video-fast.mp4 video-poster.jpg author-image.jpg certificado-bonus.jpg guarantee-logo.png meditacao-bonus.jpg pranayamas-bonus.jpg scroll_guarantee.js dist/"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

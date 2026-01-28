@@ -1,0 +1,129 @@
+The Netlify deploy errored, with the following guidance provided:
+
+Diagnosis
+
+- Relevant log lines: [line 47](#L47), [line 50](#L50), [line 52](#L52), [line 61](#L61), [line 69](#L69), [line 71](#L71).
+- Error type: npm ENOENT — npm cannot find package.json.
+- Cause: Netlify ran the configured build command npm run build at the repository root, but there is no package.json at /opt/build/repo/package.json (the repo root). That means either package.json was not committed to the repo, or your project’s package.json lives in a subdirectory (monorepo) and Netlify is building from the wrong directory.
+
+Solution
+
+1) Verify package.json is present and committed
+- Confirm a package.json exists in your repository and is committed. If you expect it at the repo root, make sure it appears in the main branch. If it lives in a subfolder (for example frontend/ or app/), note that path.
+
+2a) If package.json should be at repo root but is missing
+- Add and commit package.json to the repository root. Example minimal package.json with a build script:
+```json
+{
+  "name": "your-project",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "your-build-command"
+  }
+}
+```
+- Replace "your-build-command" with the actual build step (for example "vite build", "react-scripts build", etc.).
+
+2b) If package.json is in a subdirectory
+- Update Netlify to run the build from that subdirectory. Choose one of these methods:
+
+Option A — Set the Base directory in Netlify UI
+- In Site settings > Build & deploy > Continuous Deployment > Build settings, set "Base directory" to the subdirectory that contains package.json (for example frontend). Leave build command as the normal script (e.g., npm run build). Update the "Publish directory" to the output folder relative to that base directory (for example dist or build).
+
+Option B — Change the build command to cd into the subdirectory
+- In Netlify UI (or netlify.toml), set Build command to:
+```bash
+cd frontend && npm ci && npm run build
+```
+- And set Publish directory to the built output path, e.g. frontend/dist or frontend/build.
+
+Option C — Add a root package.json that delegates to subfolder
+- Create a package.json at repo root with a build script that runs the subfolder build:
+```json
+{
+  "scripts": {
+    "build": "cd frontend && npm ci && npm run build"
+  }
+}
+```
+- Commit this package.json so npm run build works from the root.
+
+3) Confirm Netlify build settings match
+- After making the changes, trigger a new deploy. Ensure Netlify’s resolved config (Build command and Publish directory) reflect where the build output actually lives. The logs show the current publish path is /opt/build/repo/dist/public ([line 71](#L71)) — update it if your output is elsewhere (for example frontend/dist).
+
+Notes
+- Do not leave the build command pointing to npm run build at the root if package.json is not there; either provide the package.json at root or change the base directory/build command to the correct folder.
+- If you need help identifying where package.json actually is in your repo, check the repository tree in your GitHub repo and confirm the path before updating Netlify.
+
+The relevant error logs are:
+
+Line 0: build-image version: 49b0a3a4135211657aa3d345faf640d8ccdbdfa2 (noble-new-builds)
+Line 1: buildbot version: 41bf6f19cda428261b032e3d6b547eb3ff9cd8b8
+Line 2: Fetching cached dependencies
+Line 3: Failed to fetch cache, continuing with build
+Line 4: Starting to prepare the repo for build
+Line 5: No cached dependencies found. Cloning fresh repo
+Line 6: git clone --filter=blob:none https://github.com/DinamicasVariadas/DinamicasVolei
+Line 7: Preparing Git Reference refs/heads/main
+Line 8: Starting to install dependencies
+Line 9: mise [36m~/.config/mise/config.toml[0m tools: [34mpython[0m@3.14.2
+Line 10: mise [36m~/.config/mise/config.toml[0m tools: [34mruby[0m@3.4.8
+Line 11: mise [36m~/.config/mise/config.toml[0m tools: [34mgo[0m@1.25.6
+Line 12: v22.22.0 is already installed.
+Line 13: Now using node v22.22.0 (npm v10.9.4)
+Line 14: Enabling Node.js Corepack
+Line 15: Started restoring cached build plugins
+Line 16: Finished restoring cached build plugins
+Line 17: Successfully installed dependencies
+Line 18: Detected 0 framework(s)
+Line 19: Starting build script
+Line 20: Section completed: initializing
+Line 21: Failed during stage 'building site': Build script returned non-zero exit code: 2
+Line 22: [96m[1m​[22m[39m
+Line 23: [96m[1mNetlify Build                                                 [22m[39m
+Line 24: [96m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 25: [36m[1m​[22m[39m
+Line 26: [36m[1m❯ Version[22m[39m
+Line 27:   @netlify/build 35.5.13
+Line 28: [36m[1m​[22m[39m
+Line 29: [36m[1m❯ Flags[22m[39m
+Line 30:   accountId: 692200a2b5b5cd283112a0bc
+Line 31:   baseRelDir: true
+Line 38: [36m[1m❯ Config file[22m[39m
+Line 39:   No config file was defined: using default values.
+Line 40: [36m[1m​[22m[39m
+Line 41: [36m[1m❯ Context[22m[39m
+Line 42:   production
+Line 43: [96m[1m​[22m[39m
+Line 44: [96m[1mBuild command from Netlify app                                [22m[39m
+Line 45: [96m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 46: ​
+Line 47: [36m$ npm run build[39m
+Line 48: npm error code ENOENT
+Line 49: npm error syscall open
+Line 50: npm error path /opt/build/repo/package.json
+Line 51: npm error errno -2
+Line 52: npm error enoent Could not read package.json: Error: ENOENT: no such file or directory, open '/opt/build/repo/package.json'
+Line 53: npm error enoent This is related to npm not being able to find a file.
+Line 54: npm error enoent
+Line 55: npm error A complete log of this run can be found in: /opt/buildhome/.npm/_logs/2026-01-28T00_44_01_532Z-debug-0.log
+Line 56: [91m[1m​[22m[39m
+Line 57: [91m[1m"build.command" failed                                        [22m[39m
+Line 58: [91m[1m────────────────────────────────────────────────────────────────[22m[39m
+Line 59: ​
+Line 60:   [31m[1mError message[22m[39m
+Line 61:   Command failed with exit code 254: npm run build
+Line 62: ​
+Line 63:   [31m[1mError location[22m[39m
+Line 64:   In Build command from Netlify app:
+Line 65:   npm run build
+Line 66: ​
+Line 67:   [31m[1mResolved config[22m[39m
+Line 68:   build:
+Line 69:     command: npm run build
+Line 70:     commandOrigin: ui
+Line 71:     publish: /opt/build/repo/dist/public
+Line 72:     publishOrigin: ui
+Line 73: Build failed due to a user error: Build script returned non-zero exit code: 2
+Line 74: Failing build: Failed to build site
+Line 75: Finished processing build request in 12.109s
